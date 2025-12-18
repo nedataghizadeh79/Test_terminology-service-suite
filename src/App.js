@@ -1,13 +1,16 @@
 import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { AutocompleteWidget } from "@ts4nfdi/terminology-service-suite";
+import {
+    AutocompleteWidget,
+    // BreadcrumbWidget,
+} from "@ts4nfdi/terminology-service-suite";
 
 const queryClient = new QueryClient();
 
-function App() {
+export default function App() {
     return (
         <QueryClientProvider client={queryClient}>
-            <div style={{ padding: 24, maxWidth: 700 }}>
+            <div style={{ padding: 24, maxWidth: 800 }}>
                 <h2>Terminology Service Suite</h2>
 
                 <AutocompleteWidget
@@ -17,9 +20,31 @@ function App() {
                         console.log("Selected concept:", item);
                     }}
                 />
+
+                <hr style={{ margin: "24px 0" }} />
+
+
+
+                {/*<BreadcrumbWidget*/}
+                {/*    api="https://semanticlookup.zbmed.de/ols/api/"*/}
+                {/*    colorFirst="warning"*/}
+                {/*    colorSecond=""*/}
+                {/*    entity={{*/}
+                {/*        properties: {*/}
+                {/*            iri: "http://purl.obolibrary.org/obo/NCIT_C2985",*/}
+                {/*            ontologyId: "ncit",*/}
+                {/*            shortForm: "NCIT_C2985",*/}
+                {/*        },*/}
+                {/*    }}*/}
+                {/*    onNavigateToOntology={() => {}}*/}
+                {/*    ontologyId=""*/}
+                {/*    shortForm=""*/}
+                {/*/>*/}
+
+
+
+
             </div>
         </QueryClientProvider>
     );
 }
-
-export default App;
