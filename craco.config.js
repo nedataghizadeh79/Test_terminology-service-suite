@@ -8,4 +8,12 @@ module.exports = {
             return webpackConfig;
         },
     },
+
+// to prevent error ResizeObserver
+    // devServer: (devServerConfig) => {
+    //     // Disable CRA/webpack-dev-server red error overlay
+    //     devServerConfig.client = devServerConfig.client || {};
+    //     devServerConfig.client.overlay = false;
+    //     return devServerConfig;
+    // },
 };
